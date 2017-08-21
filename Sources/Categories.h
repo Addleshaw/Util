@@ -12,6 +12,8 @@
 #import "UIAlertView+Category.h"
 #import "UIAlertController+Category.h"
 #import "UIApplication+Category.h"
+#import "UITableView+cellIndex.h"
+#import "UICollectionView+itemIndex.h"
 #import "UIImage+Category.h"
 #import "UIColor+Category.h"
 #import "UIBarButtonItem+Category.h"
