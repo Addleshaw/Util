@@ -11,7 +11,7 @@
 @interface UIImageView (Category)
 
 
--(void)imageWithSrc:(NSString*)src;
--(void)imageWithSrc:(NSString*)src complate:(void(^)())complate;
+//-(void)imageWithSrc:(NSString*)src;
+//-(void)imageWithSrc:(NSString*)src complate:(void(^)())complate;
 
 @end
