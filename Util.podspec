@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "Util"
-  s.version      = "0.0.1"
+  s.version      = “0.0.2”
   s.summary      = 'just some Category'
 
   # This description is used to generate tags and improve search results.
@@ -53,7 +53,7 @@ Pod::Spec.new do |s|
   #  profile URL.
   #
 
-  s.author             = { "Bernie" => “657483216@qq.com" }
+  s.author             = { "Bernie" => "657483216@qq.com" }
   # Or just: s.author    = "Bernie"
   # s.authors            = { "Bernie" => "email@address.com" }
   # s.social_media_url   = "http://twitter.com/Bernie"
