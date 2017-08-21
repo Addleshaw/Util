@@ -19,7 +19,7 @@
 #import "UIImageView+Category.h"
 #import "UIView+Toast.h"
 #import "UINib+Category.h"
-
+#import "NSObject+KVO.h"
 
 
 
