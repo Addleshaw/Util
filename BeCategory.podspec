@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  s.name         = "Util"
+  s.name         = "BeCategory"
   s.version      = "0.0.8"
   s.summary      = 'just some Category'
 

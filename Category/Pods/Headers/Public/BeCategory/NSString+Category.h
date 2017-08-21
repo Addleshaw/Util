@@ -1,0 +1,1 @@
+../../../BeCategory/Sources/NSString+Category.h
