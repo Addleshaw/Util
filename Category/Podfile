@@ -8,6 +8,6 @@ target 'Category' do
   # Pods for Category
 
 
-#pod "BeCategory"
+pod "BeCategory"
 
 end
