@@ -140,32 +140,31 @@
         [hash appendFormat:@"%02X", result[i]];
     return [hash lowercaseString];
 }
-//- (NSString *)urlEncode {
-//    return [self urlEncodeUsingEncoding:NSUTF8StringEncoding];
-//}
-//
-//- (NSString *)urlEncodeUsingEncoding:(NSStringEncoding)encoding {
-//    return (__bridge_transfer NSString *)CFURLCreateStringByAddingPercentEscapes(NULL,
-//                                                                                 (__bridge CFStringRef)self,
-//                                                                                 NULL,
-//                                                                                 (CFStringRef)@"!*'\"();:@&=+$,/?%#[]% ",
-//                                                                                 CFStringConvertNSStringEncodingToEncoding(encoding));
-//}
-//
-//- (NSString *)stringUTF8Decode {
-//    return [self stringUsingEncoding:NSUTF8StringEncoding];
-//}
-//
-//- (NSString *)stringUsingEncoding:(NSStringEncoding)encoding {
-//    
-//    NSString *result = (NSString *)CFBridgingRelease(CFURLCreateStringByReplacingPercentEscapesUsingEncoding(kCFAllocatorDefault,
-//                                                                                                             (CFStringRef)self, CFSTR(""),  kCFStringEncodingUTF8));
-//    
-//    return (__bridge_transfer NSString *)CFURLCreateStringByReplacingPercentEscapesUsingEncoding(NULL,
-//                                                                                                 (__bridge CFStringRef)self,
-//                                                                                                 CFSTR(""),
-//                                                                                                 CFStringConvertNSStringEncodingToEncoding(encoding));
-//}
+- (NSString *)urlEncode {
+    return [self urlEncodeUsingEncoding:NSUTF8StringEncoding];
+}
+
+- (NSString *)urlEncodeUsingEncoding:(NSStringEncoding)encoding {
+    return (__bridge_transfer NSString *)CFURLCreateStringByAddingPercentEscapes(NULL,
+                                                                                 (__bridge CFStringRef)self,
+                                                                                 NULL,
+                                                                                 (CFStringRef)@"!*'\"();:@&=+$,/?%#[]% ",
+                                                                                 CFStringConvertNSStringEncodingToEncoding(encoding));
+}
+
+- (NSString *)stringUTF8Decode {
+    return [self stringUsingEncoding:NSUTF8StringEncoding];
+}
+
+- (NSString *)stringUsingEncoding:(NSStringEncoding)encoding {
+    
+//    NSString *result = (NSString *)CFBridgingRelease(CFURLCreateStringByReplacingPercentEscapesUsingEncoding(kCFAllocatorDefault, (CFStringRef)self, CFSTR(""),  kCFStringEncodingUTF8));
+    
+    return (__bridge_transfer NSString *)CFURLCreateStringByReplacingPercentEscapesUsingEncoding(NULL,
+                                                                                                 (__bridge CFStringRef)self,
+                                                                                                 CFSTR(""),
+                                                                                                 CFStringConvertNSStringEncodingToEncoding(encoding));
+}
 
 
 
@@ -205,24 +204,24 @@
 
 
 //根据字符串的字体和size(此处size设置为字符串宽和MAXFLOAT)返回多行显示时的字符串size
-//- (CGSize)stringSizeWithFont:(UIFont *)font Size:(CGSize)size {
-//    
-//    CGSize resultSize;
-//    if ([[UIDevice currentDevice].systemVersion floatValue] >= 7) {
-//        //段落样式
-//        NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
-//        style.lineBreakMode = NSLineBreakByWordWrapping;
-//        
-//        //字体大小，换行模式
-//        NSDictionary *attributes = @{NSFontAttributeName : font , NSParagraphStyleAttributeName : style};
-//        resultSize = [self boundingRectWithSize:size options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil].size;
-//    } else {
-//        //计算正文的高度
-//        
-//        resultSize = [self sizeWithFont:font constrainedToSize:size lineBreakMode:NSLineBreakByWordWrapping];
-//    }
-//    return resultSize;
-//}
+- (CGSize)stringSizeWithFont:(UIFont *)font Size:(CGSize)size {
+    
+    CGSize resultSize;
+    if ([[UIDevice currentDevice].systemVersion floatValue] >= 7) {
+        //段落样式
+        NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
+        style.lineBreakMode = NSLineBreakByWordWrapping;
+        
+        //字体大小，换行模式
+        NSDictionary *attributes = @{NSFontAttributeName : font , NSParagraphStyleAttributeName : style};
+        resultSize = [self boundingRectWithSize:size options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil].size;
+    } else {
+        //计算正文的高度
+        
+        resultSize = [self sizeWithFont:font constrainedToSize:size lineBreakMode:NSLineBreakByWordWrapping];
+    }
+    return resultSize;
+}
 
 //判断手机号码
 - (BOOL)validateMobile

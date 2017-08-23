@@ -1,1 +1,0 @@
-../../../BeCategory/Sources/UIImage+Category.h

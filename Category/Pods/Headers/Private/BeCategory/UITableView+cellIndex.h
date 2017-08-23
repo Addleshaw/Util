@@ -1,1 +1,0 @@
-../../../BeCategory/Sources/UITableView+cellIndex.h

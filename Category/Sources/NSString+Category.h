@@ -39,13 +39,13 @@
 #pragma mark - URL Encoding and Decoding
 
 - (NSString *)MD5;
-//- (NSString *)urlEncode;
-//
-//- (NSString *)urlEncodeUsingEncoding:(NSStringEncoding)encoding ;
-//
-//- (NSString *)stringUTF8Decode ;
-//
-//- (NSString *)stringUsingEncoding:(NSStringEncoding)encoding;
+- (NSString *)urlEncode;
+
+- (NSString *)urlEncodeUsingEncoding:(NSStringEncoding)encoding ;
+
+- (NSString *)stringUTF8Decode ;
+
+- (NSString *)stringUsingEncoding:(NSStringEncoding)encoding;
 
 #pragma mark - Date Format
 
@@ -53,7 +53,7 @@
 
 
 -(BOOL)isChinese;
-//- (CGSize)stringSizeWithFont:(UIFont *)font Size:(CGSize)size;
+- (CGSize)stringSizeWithFont:(UIFont *)font Size:(CGSize)size;
 - (BOOL)validateMobile;
 - (BOOL)onlyNum;
 - (BOOL)validateEmail;
