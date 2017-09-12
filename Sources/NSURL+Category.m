@@ -11,7 +11,7 @@
 
 +(NSURL*)webUrl:(NSString*)str{
     if (![str hasPrefix:@"http"]) {
-        return [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",@"",str]];
+        return [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",WEBSEARVICE,str]];
     }
     return [NSURL URLWithString:str];
 }

@@ -43,17 +43,15 @@
 }
 
 -(void)showAlert{
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        if(_arr.count!=0){
-            UIAlertController*vc = _arr.firstObject;
-            UIViewController*root = [UIApplication sharedApplication].keyWindow.rootViewController;
-            if (root.presentedViewController != nil || root.presentingViewController != nil ) {
-                [[self topUIViewController:root] presentViewController:vc animated:YES completion:nil];
-            }else{
-                [root presentViewController:vc animated:YES completion:nil];
-            }
+    if(_arr.count!=0){
+        UIAlertController*vc = _arr.firstObject;
+        UIViewController*root = [UIApplication sharedApplication].keyWindow.rootViewController;
+        if (root.presentedViewController != nil || root.presentingViewController != nil ) {
+            [[self topUIViewController:root] presentViewController:vc animated:YES completion:nil];
+        }else{
+            [root presentViewController:vc animated:YES completion:nil];
         }
-    });
+    }
 }
 -(UIViewController*)topUIViewController:(UIViewController*)vc{
     UIViewController * temp = vc.presentedViewController;
@@ -145,5 +143,9 @@
     }
     [UIAlertControllerManager.shared add:vc];
 }
+
+@end
+@implementation UIViewController(Category)
+
 
 @end

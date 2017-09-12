@@ -6,7 +6,6 @@
 //
 
 #import <UIKit/UIKit.h>
-typedef void (^TapAction)();
 
 @interface UIView (Category)
 
@@ -55,13 +54,6 @@ typedef void (^TapAction)();
 - (nullable UIImage *)viewImage;
 
 - (void)addSubViews:(nullable UIView*)views, ...NS_REQUIRES_NIL_TERMINATION;
-
-- (void)tapHandle:(nullable TapAction)block;
-- (void)shakeView;
-- (void)shakeRotation:(CGFloat)rotation;
-
--(void)CRadius:(CGFloat)radius;
-
 
 @end
 

@@ -36,22 +36,9 @@
     }else{
         return @"";
     }
-}
--(NSString*)stringFromKeys:(NSString*)keys, ...NS_REQUIRES_NIL_TERMINATION{
-    
-    va_list list;
-    va_start(list, keys);
-    NSString * tem = keys;
-    while (tem!=nil) {
-        if([self stringFromKey:tem].length>0){
-            va_end(list);
-            return [self stringFromKey:tem];
-        }
-        tem = va_arg(list, NSString*);
-    }
-    va_end(list);
-    
-    return @"";
+    //    return [self anyObjectForKey:key withNilBlock:^id() {
+    //        return @"";
+    //    }];
 }
 
 -(NSDictionary*)dicFromKey:(NSString*)key{

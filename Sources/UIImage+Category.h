@@ -19,9 +19,4 @@
 - (UIImage *)fixOrientation;
 
 - (NSString *)base64String;
-
-
-+ (UIImage *)createQRCodeData:(NSString *)data Width:(CGFloat)width;
-
-
 @end

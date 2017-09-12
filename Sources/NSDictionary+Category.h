@@ -14,9 +14,6 @@
 -(NSString*)toString;
 
 -(NSString*)stringFromKey:(NSString*)key;
-
--(NSString*)stringFromKeys:(NSString*)keys, ...NS_REQUIRES_NIL_TERMINATION;
-
 -(NSDictionary*)dicFromKey:(NSString*)key;
 
 -(NSMutableArray*)mutableArrayForKey:(NSString *)key;

@@ -22,3 +22,9 @@
 +(void)actionSheet:(NSString*)title buttons:(NSArray*)btns action:(void(^)(int))actions;
 +(void)actionSheet:(NSString*)title Message:(NSString*)message buttons:(NSArray*)btns action:(void(^)(int))actions;
 @end
+
+
+
+@interface UIViewController (Category)
+
+@end
