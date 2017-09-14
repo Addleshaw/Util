@@ -27,18 +27,25 @@
     return [NSString stringWithFormat:@"{%@}",[arr componentsJoinedByString:@","]];
 }
 
-
 -(NSString*)stringFromKey:(NSString*)key{
     if ([self objectForKey:key]&&[[self objectForKey:key] isEqual:[NSNull null]]) {
         return @"";
+    }else if([self objectForKey:key]&&[[self objectForKey:key] isKindOfClass:[NSNumber class]]){
+        int i = [self[key] intValue];
+        double f = [self[key] doubleValue];
+        
+        //NSNumberFormatter *moneyFormatter = [[NSNumberFormatter alloc] init];
+        //[moneyFormatter setPositiveFormat:@"###,##0.000;"];
+        if (i==f) {
+            return [NSString stringWithFormat:@"%i",i];
+        }else{
+            return [NSString stringWithFormat:@"%.2f",f];
+        }
     }else if([self objectForKey:key]){
         return [NSString stringWithFormat:@"%@",[self objectForKey:key]];
     }else{
         return @"";
     }
-    //    return [self anyObjectForKey:key withNilBlock:^id() {
-    //        return @"";
-    //    }];
 }
 
 -(NSDictionary*)dicFromKey:(NSString*)key{
